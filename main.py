@@ -1,5 +1,6 @@
 import flet as ft
 from conexao import validar_login
+import sistema
 
 def main(page: ft.Page):
     page.title="Estoque SAEP - Login"
@@ -10,8 +11,20 @@ def main(page: ft.Page):
     senha_caixa = ft.TextField(label="Senha", width=300, password=True)
 
     def btn_acesso(e):
-        pass
-    #volto aqui depois
+        email = email_caixa.value
+        senha = senha_caixa.value
+
+        usuario = validar_login(email, senha)
+        
+        if usuario:
+            sistema.menu_principal(page, usuario)
+        else:
+            page.snack_bar = ft.SnackBar(ft.Text("Dados inválidos! Tente novamente."),bgcolor = 'red')
+
+            page.snack_bar.open = True
+            page.update()
+
+
 
     btn_entrar = ft.ElevatedButton(text="Entrar", on_click=btn_acesso,width=300)
 
@@ -23,3 +36,4 @@ def main(page: ft.Page):
     )
 
 ft.app(target=main)
+
