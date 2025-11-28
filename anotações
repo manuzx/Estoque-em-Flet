@@ -1,0 +1,11 @@
+# conn = configurar a conexao com o banco de dados MySQL
+# cursor = conn.cursor() # objeto para executar comandos SQL
+# conn.close() # fechar a conexao com o banco de dados
+# cursor.execute("COMANDO SQL") # executar comandos SQL
+# resultados = cursor.fetchall() # obter todos os resultados de uma consulta
+# resultado = cursor.fetchone() # obter um unico resultado de uma consulta
+# conn.commit() # salvar alteracoes no banco de dados
+# cursor.execute("INSERT INTO tabela (coluna1, coluna2) VALUES (%s, %s)", (valor1, valor2))  # inserir dados
+# cursor.execute("UPDATE tabela SET coluna1=%s WHERE id=%s", (novo_valor, id))  # atualizar dados
+# cursor.execute("DELETE FROM tabela WHERE id=%s", (id,))  # deletar dados
+# cursor.execute("SELECT * FROM tabela WHERE coluna1=%s", (valor,))  # consultar dados
